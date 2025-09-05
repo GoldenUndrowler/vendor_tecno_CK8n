@@ -1,0 +1,30 @@
+// Android.bp for AIDL Fingerprint HAL
+cc_binary {
+    name: "android.hardware.biometrics.fingerprint-service.transsion",
+    relative_install_path: "hw",
+    init_rc: ["fingerprint-transsion.rc"],
+    vintf_fragments: ["fingerprint-transsion.xml"],
+    vendor: true,
+
+    srcs: [
+        "src/main.cpp",
+        "src/Fingerprint.cpp",
+        "src/Session.cpp",
+    ],
+
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.biometrics.common-V1-ndk",
+        "android.hardware.biometrics.fingerprint-V1-ndk",
+        "android.hardware.keymaster-V4-ndk",
+        // This is the underlying Mediatek HIDL HAL implementation library
+        // discovered from your proprietary file list.
+        "vendor.mediatek.hardware.biometrics.fingerprint@2.1",
+    ],
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+    ],
+}

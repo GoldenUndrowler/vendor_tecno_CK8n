@@ -1,0 +1,11 @@
+<!-- VINTF fragment for AIDL Fingerprint HAL -->
+<manifest version="1.0" type="device">
+    <hal format="aidl">
+        <name>android.hardware.biometrics.fingerprint</name>
+        <version>1</version>
+        <interface>
+            <name>IFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>
