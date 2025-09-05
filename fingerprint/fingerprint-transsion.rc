@@ -1,6 +1,0 @@
-# Init service for the Transsion Fingerprint HAL (AIDL)
-service fingerprint-hal /vendor/bin/hw/android.hardware.biometrics.fingerprint-service.transsion
-    class hal
-    user system
-    group system
-    shutdown critical
